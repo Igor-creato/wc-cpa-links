@@ -1,8 +1,8 @@
 /* Модальное окно */
 .wc-affiliate-modal {
-    display: block;
-    position: fixed;
-    z-index: 999999;
+    display: block !important;
+    position: fixed !important;
+    z-index: 2147483647 !important;
     left: 0;
     top: 0;
     width: 100%;
@@ -81,6 +81,19 @@
     display: flex;
     gap: 10px;
     justify-content: center;
+    margin-bottom: 15px; /* Добавляем отступ снизу */
+}
+
+.wc-affiliate-login-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.wc-affiliate-login-link:hover {
+    text-decoration: underline;
 }
 
 .wc-affiliate-btn {
@@ -129,4 +142,10 @@
     .wc-affiliate-btn {
         width: 100%;
     }
+}
+
+/* Дополнительные стили для отладки */
+.wc-affiliate-modal {
+    display: block !important;
+    visibility: visible !important;
 }
