@@ -168,9 +168,9 @@ class WC_Affiliate_URL_Params {
             return;
         }
         
-        global $product;
+        $product = wc_get_product(get_the_ID());
         
-        if (!$product || $product->get_type() !== 'external') {
+        if (!$product || !is_a($product, 'WC_Product') || $product->get_type() !== 'external') {
             return;
         }
         
