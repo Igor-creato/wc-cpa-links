@@ -141,15 +141,15 @@
                     <h3 class="wc-affiliate-modal-title">Внимание</h3>
                     <p class="wc-affiliate-modal-message">${wcAffiliateParams.warningMessage}</p>
                     <div class="wc-affiliate-modal-actions">
-                        <a href="${
-                          wcAffiliateParams.loginUrl
-                        }" class="wc-affiliate-btn wc-affiliate-btn-secondary" id="wc-affiliate-cancel">
-                            Авторизоваться
-                        </a>
                         <a href="${replaceUserPlaceholdersWithUnregistered(originalUrl)}"
                            class="wc-affiliate-btn wc-affiliate-btn-primary"
                            id="wc-affiliate-continue" target="_blank">
                             Продолжить без авторизации
+                        </a>
+                        <a href="${
+                          wcAffiliateParams.loginUrl
+                        }" class="wc-affiliate-btn wc-affiliate-btn-secondary" id="wc-affiliate-cancel">
+                            Авторизоваться или зарегистрироваться
                         </a>
                     </div>
                 </div>
