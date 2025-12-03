@@ -190,7 +190,7 @@ class WC_Affiliate_URL_Params
     public function add_product_id_to_link(string $link, WC_Product $product): string
     {
         if ($product->get_type() === 'external') {
-            $link = str_replace('<a ', '<a data-product-id="' . $product->get_id() . '" ', $link);
+            $link = str_replace('<a ', '<a data-product-id="' . $product->get_id() . '" target="_blank" ', $link);
         }
         return $link;
     }
@@ -244,7 +244,7 @@ class WC_Affiliate_URL_Params
                     'Вы не авторизованы, при переходе покупка не будет учтена сервисом. Продолжить?',
                     'wc-affiliate-url-params'
                 ),
-                'loginUrl' => wp_login_url(get_permalink()),
+                'loginUrl' => 'http://localhost/kash-back/?page_id=13&action=register',
                 'nonce' => wp_create_nonce('wc_affiliate_url_params')
             ]);
 

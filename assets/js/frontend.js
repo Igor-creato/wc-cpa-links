@@ -141,18 +141,17 @@
                     <h3 class="wc-affiliate-modal-title">Внимание</h3>
                     <p class="wc-affiliate-modal-message">${wcAffiliateParams.warningMessage}</p>
                     <div class="wc-affiliate-modal-actions">
-                        <button class="wc-affiliate-btn wc-affiliate-btn-secondary" id="wc-affiliate-cancel">
-                            Нет
-                        </button>
+                        <a href="${
+                          wcAffiliateParams.loginUrl
+                        }" class="wc-affiliate-btn wc-affiliate-btn-secondary" id="wc-affiliate-cancel">
+                            Авторизоваться
+                        </a>
                         <a href="${replaceUserPlaceholdersWithUnregistered(originalUrl)}"
-                           class="wc-affiliate-btn wc-affiliate-btn-primary" 
+                           class="wc-affiliate-btn wc-affiliate-btn-primary"
                            id="wc-affiliate-continue" target="_blank">
-                            Да
+                            Продолжить без авторизации
                         </a>
                     </div>
-                     <a href="${
-                       wcAffiliateParams.loginUrl
-                     }" class="wc-affiliate-login-link">Авторизоваться</a>
                 </div>
             </div>
         `;
@@ -165,13 +164,9 @@
     }, 10);
 
     // Обработчики закрытия
-    $('#wc-affiliate-warning-modal').on(
-      'click',
-      '#wc-affiliate-cancel, .wc-affiliate-modal-close',
-      function () {
-        closeModal();
-      },
-    );
+    $('#wc-affiliate-warning-modal').on('click', '.wc-affiliate-modal-close', function () {
+      closeModal();
+    });
 
     // Закрытие при клике вне окна
     $(window).on('click.wcAffiliateModal', function (e) {
