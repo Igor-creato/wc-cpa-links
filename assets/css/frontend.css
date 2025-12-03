@@ -106,26 +106,30 @@
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: var(--wd-btn-font-weight, 500);
+    font-family: var(--wd-font-family, inherit);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .wc-affiliate-btn-primary {
-    background-color: #0073aa;
+    background-color: var(--wd-primary-color, #0073aa);
     color: #fff;
 }
 
 .wc-affiliate-btn-primary:hover {
-    background-color: #005a87;
-    color: #fff;
+    filter: brightness(0.9);
+    color: #fff !important;
 }
 
 .wc-affiliate-btn-secondary {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--wd-primary-color, #0073aa);
+    color: #fff;
 }
 
 .wc-affiliate-btn-secondary:hover {
-    background-color: #ddd;
+    filter: brightness(0.9);
+    color: #fff !important;
 }
 
 /* Адаптивность */
